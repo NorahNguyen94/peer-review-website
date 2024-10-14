@@ -1,70 +1,83 @@
-<<<<<<< HEAD
-# peer-review-website
-=======
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎓 Peer Review Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A web application built with Laravel that allows students to submit and share peer reviews for their courses and allows teachers to manage courses and students enrolled. This platform is designed to manage peer review assignments, display student feedback, and store review data securely.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **User Authentication**: Secure login and registration for students and teachers.
+- **Peer Review Submission**: Students can submit reviews and rate their peers. Reviewees can also rate their reviewers to encourage students to submit high-quality reviews and contributions to others.
+- **Peer Review Groups**: Teachers can assign students into peer review groups randomly. Students can only review other students on the same group.
+- **Review Display**: Students can view and filter their submitted and received reviews.
+- **Course Management**: Manage courses, enrolled students, and peer review assignments.
+- **Course Assessment**: Manage assessments, peer views and students' scores for each particular assessment.
+- **Review Leaderboard**: Display top reviewers who contributue useful reviews to other students.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Key Laravel Features Used
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Controllers**: For handling the logic behind user interactions, such as review submission, course management, and group assignments.
+- **Models**: Database interactions are managed through Laravel Eloquent models, including `User`, `PeerReview`, `Course`, `Assessment`, and `Feedback`.
+- **ORM (Eloquent)**: Using Laravel’s ORM to easily define relationships like `hasMany` and `belongsTo` between models (e.g., a course has many reviews, a review belongs to a user), especially, it helps to handle many to many relationships such as a student might enroll in many courses and a course might have many students enrolling in.
+- **Seeders**: Database seeders are used to populate the database with sample users (teachers and students), courses, and reviews for testing.
+- **Migrations**: Manage database schema with migrations to define tables for `users`, `courses`, `assessments`, `reviews`, `enrolled_courses`, `score`, `feedback` and `assessment_group`.
+- **Validator**: Implement server-side validation to ensure input data is accurate and secure.
+- **View and Templating**: Use Blade templates for dynamic rendering of views, such as review forms and lists of courses.
 
-## Learning Laravel
+## Usage
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Students**:
+- Register and log in to the system
+- View enrolling courses
+- View assessments of a course
+- Submit a peer review. If the assessment is student-selected, students can choose their reviewee from the drop-down menu and make a review; otherwise, it is a teacher-assigned assessment, teachers will form groups randomly and students only review their group members
+- Rate their reviewer
+- View made reviews and received reviews
+- View top contributors (top reviewers)
+  
+**Teachers**:
+- Log in to the system
+- View teaching courses
+- Create, edit and delete assessments of a course
+- Enroll students to the course
+- Assign students randomly into different groups if the assessment is teacher-assigned type
+- Mark students based on their reviews
+- View top contributors (top reviewers)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/NorahNguyen94/peer-review-website
+    cd peer-review-webiste
+    ```
 
-## Laravel Sponsors
+2. Install dependencies:
+    ```bash
+    composer install
+    npm install
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. Run the development server:
+    ```bash
+    php artisan serve
+    ```
 
-### Premium Partners
+## Credits
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- Laravel Framework
+- Bootstrap for styling
+- Icons from Font Awesome
 
-## Contributing
+## Screenshots
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![image](https://github.com/user-attachments/assets/99ad1201-4ba7-40ce-88a6-f90509ec869c)
+![image](https://github.com/user-attachments/assets/5bfddfbe-f7db-4532-a493-e4a9397f1862)
+![image](https://github.com/user-attachments/assets/95f841bb-0193-40b1-a2df-f17575ecb31e)
+![image](https://github.com/user-attachments/assets/b9579492-0894-447f-a823-2d73a84cebba)
+![image](https://github.com/user-attachments/assets/39544c78-6877-4b21-810d-c57968ecd0d7)
+![image](https://github.com/user-attachments/assets/28990ff4-b389-4883-9937-9380872501d2)
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> a1faa3a (Upload files)
