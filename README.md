@@ -66,6 +66,7 @@ A web application built with Laravel that allows students to submit and share pe
 - Laravel Framework
 - Bootstrap for styling
 - Icons from Font Awesome
+- Sqlite for database
 
 ## Screenshots
 
