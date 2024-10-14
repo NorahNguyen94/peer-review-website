@@ -55,8 +55,23 @@ A web application built with Laravel that allows students to submit and share pe
     composer install
     npm install
     ```
-
-3. Run the development server:
+    
+3. Congfigure database:
+   Open the config folder, go to database.php and set default database is sqlite:
+    ```bash
+    'default' => env('DB_CONNECTION', 'sqlite'),
+    ```
+   Open the .env file and set the database connection to SQLite
+    ```bash
+   DB_CONNECTION=sqlite
+    ```
+    
+4. Run migrations and seeders:
+    ```bash
+    php artisan migrate --seed
+    ```
+    
+5. Run the development server:
     ```bash
     php artisan serve
     ```
